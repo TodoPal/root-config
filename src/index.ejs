@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Root Config</title>
+  <title>TodoPal</title>
   <!--
     Remove this if you only support browsers that support async/await.
     This is needed by babel to share largeish helper code for compiling async/await in older
@@ -47,7 +47,8 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "@TodoPal/root-config": "//localhost:9000/TodoPal-root-config.js"
+        "@TodoPal/root-config": "//localhost:9000/TodoPal-root-config.js",
+        "@TodoPal/utils": "//localhost:9001/TodoPal-utils.js"
       }
     }
   </script>
@@ -57,8 +58,7 @@
     If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
     Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
   -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
-
+  <script src="https://cdn.jsdelivr.net/npm/zone.js@0.14.6/bundles/zone.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
   <% if (isLocal) { %>
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
