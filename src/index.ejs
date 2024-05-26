@@ -49,6 +49,7 @@
       "imports": {
         "@TodoPal/root-config": "//localhost:9000/TodoPal-root-config.js",
         "@TodoPal/utils": "//localhost:9001/TodoPal-utils.js",
+        "@TodoPal/header": "//localhost:4201/main.js",
         "@TodoPal/profile-page": "//localhost:4202/main.js"
       }
     }
@@ -72,6 +73,7 @@
   <template id="single-spa-layout">
     <single-spa-router>
       <route path="profile">
+        <application name="@TodoPal/header"></application>
         <application name="@TodoPal/profile-page"></application>
       </route>
     </single-spa-router>
