@@ -1,4 +1,5 @@
 import { registerApplication, start } from "single-spa";
+import { constructApplications, constructLayoutEngine, constructRoutes } from "single-spa-layout";
 
 registerApplication({
   name: "@TodoPal/welcome-page",
@@ -12,6 +13,16 @@ registerApplication({
   activeWhen: ["/todos/:id", "/todos"],
 });
 
+const routes = constructRoutes(document.querySelector("#single-spa-layout"));
+const applications = constructApplications({
+  routes,
+  loadApp({ name }) {
+    return System.import(name);
+  },
+});
+const layoutEngine = constructLayoutEngine({ routes, applications });
+
+applications.forEach(registerApplication);
 start({
   urlRerouteOnly: true,
 });

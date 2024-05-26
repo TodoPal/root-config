@@ -48,7 +48,8 @@
     {
       "imports": {
         "@TodoPal/root-config": "//localhost:9000/TodoPal-root-config.js",
-        "@TodoPal/utils": "//localhost:9001/TodoPal-utils.js"
+        "@TodoPal/utils": "//localhost:9001/TodoPal-utils.js",
+        "@TodoPal/profile-page": "//localhost:4202/main.js"
       }
     }
   </script>
@@ -67,6 +68,14 @@
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
   <% } %>
+
+  <template id="single-spa-layout">
+    <single-spa-router>
+      <route path="profile">
+        <application name="@TodoPal/profile-page"></application>
+      </route>
+    </single-spa-router>
+  </template>
 </head>
 <body>
   <noscript>
